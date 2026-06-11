@@ -8,170 +8,111 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Japón 2026</title>
 <style>
-:root {
-  --bg:#0f172a; --card:#111827; --card2:#1f2937; --text:#f8fafc; --muted:#cbd5e1;
-  --accent:#ef4444; --accent2:#f97316; --line:rgba(255,255,255,.12);
-}
+:root{--bg:#07111f;--card:#111827;--card2:#1f2937;--text:#f8fafc;--muted:#cbd5e1;--accent:#ef4444;--accent2:#f97316;--line:rgba(255,255,255,.13)}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;overflow:hidden;background:linear-gradient(160deg,#020617,#1f2937);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+html,body{margin:0;height:100%;overflow:hidden;background:linear-gradient(160deg,#020617,#172554);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
 .app{height:100dvh;display:flex;flex-direction:column}
-.topbar{height:58px;display:flex;align-items:center;justify-content:space-between;padding:10px 12px;padding-top:max(10px,env(safe-area-inset-top));background:rgba(2,6,23,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);z-index:5}
-.navbtn{border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);border-radius:999px;padding:9px 12px;font-weight:700;text-decoration:none;font-size:14px}
+.topbar{height:60px;display:flex;align-items:center;justify-content:space-between;padding:10px 12px;padding-top:max(10px,env(safe-area-inset-top));background:rgba(2,6,23,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);z-index:10}
+.navbtn{border:1px solid var(--line);background:rgba(255,255,255,.09);color:var(--text);border-radius:999px;padding:9px 12px;font-weight:800;text-decoration:none;font-size:14px}
 .navright{display:flex;gap:8px}
-.titleMini{font-weight:800;font-size:15px;max-width:42vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.titleMini{font-weight:900;font-size:14px;max-width:44vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
 .screen{flex:1;min-height:0;position:relative}
-.page{display:none;height:100%;padding:14px;overflow:hidden}
+.page{display:none;height:100%;padding:13px;overflow:hidden}
 .page.active{display:block}
-.scrollbox{height:100%;overflow:auto;padding-bottom:28px;-webkit-overflow-scrolling:touch}
-.hero{border-radius:28px;padding:22px;background:radial-gradient(circle at top right,#ef4444 0,#f97316 24%,#111827 62%);box-shadow:0 20px 50px rgba(0,0,0,.35);margin-bottom:14px}
+.scrollbox{height:100%;overflow:auto;padding-bottom:30px;-webkit-overflow-scrolling:touch}
+.hero{border-radius:28px;padding:22px;background:#b91c1c;box-shadow:0 20px 50px rgba(0,0,0,.36);margin-bottom:14px}
 .hero h1{margin:0;font-size:34px;line-height:1.02}
-.hero p{margin:8px 0 0;color:#fff;font-weight:600}
+.hero p{margin:8px 0 0;color:#fff;font-weight:650}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.daytile{border:1px solid var(--line);background:rgba(255,255,255,.08);border-radius:18px;padding:13px;text-decoration:none;color:var(--text);min-height:82px;display:flex;flex-direction:column;justify-content:space-between}
+.daytile{border:1px solid var(--line);background:rgba(255,255,255,.08);border-radius:18px;padding:13px;text-decoration:none;color:var(--text);min-height:86px;display:flex;flex-direction:column;justify-content:space-between}
 .daytile .date{font-weight:900}
 .daytile .city{color:var(--muted);font-size:13px}
-.card{background:rgba(17,24,39,.86);border:1px solid var(--line);border-radius:22px;padding:15px;margin-bottom:12px;box-shadow:0 12px 28px rgba(0,0,0,.22)}
-.dayhead{background:linear-gradient(135deg,#ef4444,#f97316);border:none}
+.card{background:rgba(17,24,39,.88);border:1px solid var(--line);border-radius:22px;padding:15px;margin-bottom:12px;box-shadow:0 12px 28px rgba(0,0,0,.24)}
+.dayhead{background:#b91c1c;border:none}
 .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#fee2e2;font-weight:900}
-h2{margin:4px 0 0;font-size:30px}
+h2{margin:4px 0 0;font-size:28px;line-height:1.07}
 h3{margin:0 0 10px;font-size:17px}
 p,li{color:var(--muted);line-height:1.38}
 ul{padding-left:20px;margin:6px 0}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
-.action{display:block;text-align:center;background:rgba(255,255,255,.1);border:1px solid var(--line);border-radius:16px;padding:11px 8px;color:var(--text);text-decoration:none;font-weight:800;font-size:14px}
+.action{display:block;text-align:center;background:rgba(255,255,255,.1);border:1px solid var(--line);border-radius:16px;padding:11px 8px;color:var(--text);text-decoration:none;font-weight:850;font-size:13.6px}
 .primary{background:#fff;color:#111827}
-.restaurant{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.hotelgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.restaurant{padding:10px 0;border-top:1px solid var(--line)}
 .restaurant:first-of-type{border-top:none}
-.price{min-width:46px;font-weight:900;color:#fed7aa}
-.restname{font-weight:900;color:#fff}
+.price{font-weight:900;color:#fed7aa}
+.restname{font-weight:900;color:#fff;margin-top:2px}
 .small{font-size:13px;color:var(--muted)}
+.warn{font-size:12px;color:#fde68a}
 .empty{color:#94a3b8;font-style:italic}
-@media (max-width:380px){.actions{grid-template-columns:1fr} h2{font-size:25px} .topbar{height:54px} .navbtn{font-size:13px;padding:8px 10px}}
+@media (max-width:380px){.actions,.hotelgrid{grid-template-columns:1fr} h2{font-size:24px} .topbar{height:55px} .navbtn{font-size:13px;padding:8px 10px}}
 </style>
 </head>
 <body>
 <div class="app">
-  <header class="topbar">
-    <a class="navbtn" href="#" onclick="showIndex();return false;">🏠 Índice</a>
-    <div id="topTitle" class="titleMini">Japón 2026</div>
-    <div class="navright">
-      <a class="navbtn" href="#" onclick="prevDay();return false;">◀︎</a>
-      <a class="navbtn" href="#" onclick="nextDay();return false;">▶︎</a>
-    </div>
-  </header>
-  <main class="screen">
-    <section id="index" class="page active">
-      <div class="scrollbox">
-        <div class="hero">
-          <h1>🇯🇵 Japón 2026</h1>
-          <p>Guía familiar · una página por día · restaurantes y mapas</p>
-        </div>
-        <div id="indexGrid" class="grid"></div>
-      </div>
-    </section>
-    <section id="day" class="page">
-      <div id="dayContent" class="scrollbox"></div>
-    </section>
-  </main>
+<header class="topbar">
+<a class="navbtn" href="#" onclick="showIndex();return false;">🏠 Índice</a>
+<div id="topTitle" class="titleMini">Japón 2026</div>
+<div class="navright"><a class="navbtn" href="#" onclick="prevDay();return false;">◀︎</a><a class="navbtn" href="#" onclick="nextDay();return false;">▶︎</a></div>
+</header>
+<main class="screen">
+<section id="index" class="page active"><div class="scrollbox">
+<div class="hero"><h1>🇯🇵 Japón 2026</h1></div>
+<div id="indexGrid" class="grid"></div></div></section>
+<section id="day" class="page"><div id="dayContent" class="scrollbox"></div></section>
+</main>
 </div>
 <script>
-const DAYS = [{"n": 1, "date": "12/06/2026", "dateIso": "2026-06-12", "city": "VIAJE", "hotel": "VIAJE", "visits": ["· 10:00 (3 h antes salida vuelo aprox)", "· 12:55 - 6:00 PEKIN + 2:45h + · 8:45 - 12:40", "[Etihad 10:45-19:40 + 1h30 + 21:10-11:50]"], "food": "", "dinner": "", "transport": "VIAJE", "zone": "VIAJE", "restaurants": [["€", "Uobei Shibuya", "Sushi económico y divertido"], ["€€", "Gyukatsu Motomura", "Gyukatsu muy popular"], ["€€€", "Ginza Kyubey", "Sushi clásico de alta gama"]]}, {"n": 2, "date": "13/06/2026", "dateIso": "2026-06-13", "city": "OSAKA (noche Extra)", "hotel": "Le Rise Osaka ***", "visits": ["· 12:40 Traslado Aeropuerto - hotel", "· Dejar maletas en hotelxx", "· Comer", "· Descansar", "· 17:45h TREN bala: 15 min.", "· KOBE: puerto, carne, arco puerta chagán, coloridas calles Nanki-machi, distrito Sannomiya, tiendas y restaurantes", "18:00: Llegada a Estación JR Sannomiya. Paseo por las tiendas de los alrededores y las galerías comerciales cubiertas (Sannomiya Center Gai) a esta hora están a pleno rendimiento. Es el lugar perfecto para ver el bullicio de la ciudad)", "18:45: Caminata (10 min) hacia Nankin-machi/China Town (Fotos en Arco puerta Chagan, y picoteo rápido. Calles coloridas: A las 18:30-19:00, el barrio chino está espectacular con sus farolillos rojos encendidos. Es muy compacto y se recorre rápido. Los puestos de comida callejera suelen empezar a cerrar hacia las 20:00-20:30, así que es mejor ir aquí antes que al puerto)", "19:45: Caminata (10-15 min) hacia el Puerto Meriken Park, Vistas nocturnas: Es la joya de Kobe de noche. Verás la Kobe Port Tower iluminada y el edificio del Museo Marítimo", "20:15: Cena en la zona de Harborland / MOSAIC con vistas al puerto iluminado. MOSAIC: Es un centro comercial en el puerto lleno de tiendas y restaurantes con vistas al agua. Muchos restaurantes aquí cierran más tarde (22:00 o 23:00), por lo que es el sitio perfecto para terminar el día cenando.", "·  TREN / TRANSPORTE PÚBLICO / CAMINANDO AL HOTEL", "· OSAKA"], "food": "", "dinner": "Cena en la zona de Harborland", "transport": "Le Rise Osaka ***", "zone": "Dotonbori Osaka", "restaurants": [["€", "Ajinoya", "Okonomiyaki en Dotonbori / Namba"], ["€€", "Fukutaro", "Okonomiyaki y teppan cerca de Namba"], ["€€€", "Hajime", "Alta cocina, experiencia especial"]]}, {"n": 3, "date": "14/06/2026", "dateIso": "2026-06-14", "city": "OSAKA", "hotel": "Le Rise Osaka", "visits": ["· TREN bala: 30 min", "· HIMEJI: galerias comerciales, castillo Himeyi (la garza blanca, 16h ultima entrada), restaurante local comida libre.", "· Libre OSAKA", "· Etihad llega 11:50", "· VISITA NOCTURNA: tour 3 h calles iluminadas y secretos de la zona: almacenes abandonados, casas pintorescas en ruinas, bares/pubs, casas de juego clandestinas, Santuario, Barrio Rojo, la yakuza)"], "food": "", "dinner": "", "transport": "Le Rise Osaka", "zone": "Dotonbori Osaka", "restaurants": [["€", "Ajinoya", "Okonomiyaki en Dotonbori / Namba"], ["€€", "Fukutaro", "Okonomiyaki y teppan cerca de Namba"], ["€€€", "Hajime", "Alta cocina, experiencia especial"]]}, {"n": 4, "date": "15/06/2026", "dateIso": "2026-06-15", "city": "OSAKA", "hotel": "Le Rise Osaka", "visits": ["· Castillo Hideyoshi, barrio Shinsekai (puestos de comida), torre Tsutenkaku,", "· comida libre brochetas kushi-katsu,", "· barrio otaku Nipponbashi (manga y anime, y tecnologia), centro neuralgico Namba y dotonbori, puente Ebisu-bashi, foto)"], "food": "comida libre brochetas kushi-katsu,", "dinner": "", "transport": "Le Rise Osaka", "zone": "Dotonbori Osaka", "restaurants": [["€", "Ajinoya", "Okonomiyaki en Dotonbori / Namba"], ["€€", "Fukutaro", "Okonomiyaki y teppan cerca de Namba"], ["€€€", "Hajime", "Alta cocina, experiencia especial"]]}, {"n": 5, "date": "16/06/2026", "dateIso": "2026-06-16", "city": "OSAKA", "hotel": "Le Rise Osaka", "visits": ["· tren bala", "· Hiroshima: cúpula bomba, parque paz, monumento niños", "· tren", "· Ferry", "· Miyajima/Isla dioses: Torii rojo y santuario Itsukushima, templo budista Daigan-ji, templo Daisho-in", "· Tren??", "· OSAKA"], "food": "", "dinner": "", "transport": "Le Rise Osaka", "zone": "Dotonbori Osaka", "restaurants": [["€", "Ajinoya", "Okonomiyaki en Dotonbori / Namba"], ["€€", "Fukutaro", "Okonomiyaki y teppan cerca de Namba"], ["€€€", "Hajime", "Alta cocina, experiencia especial"]]}, {"n": 6, "date": "17/06/2026", "dateIso": "2026-06-17", "city": "KOYOSAN", "hotel": "Soji-in ***", "visits": ["· Traslado Osaka-Koyasan", "· templos: cedros milenarios, Okunoin, noche en templo/shukubo cena vegetariana shojin ryori"], "food": "", "dinner": "cena vegetariana shojin ryori en el templo", "transport": "Soji-in ***", "zone": "Dotonbori Osaka", "restaurants": [["€", "Ajinoya", "Okonomiyaki en Dotonbori / Namba"], ["€€", "Fukutaro", "Okonomiyaki y teppan cerca de Namba"], ["€€€", "Hajime", "Alta cocina, experiencia especial"]]}, {"n": 7, "date": "18/06/2026", "dateIso": "2026-06-18", "city": "KIOTO", "hotel": "Sotetsu fresa inn *** (hay 3)", "visits": ["· Traslado Koyosan - Kioto", "· Visista noctura: día completo, ruta templos, templo kinkaku-ji/pabellón de oro, camino filosofía, Ginkaku \"pabellón de plata, comer libre, barrio Higashiyama, Ninenzaka, calle Nene no Michi, santuario Yasaka, barrio Gion de las geishas, si queremos calle Nahamikoji  con casas de te y restaurantes"], "food": "", "dinner": "", "transport": "Sotetsu fresa inn *** (hay 3)", "zone": "Gion Kyoto", "restaurants": [["€", "Honke Owariya", "Soba histórica"], ["€€", "Gion Kappa", "Izakaya/kaiseki informal"], ["€€€", "Gion Sasaki", "Kaiseki de referencia"]]}, {"n": 8, "date": "19/06/2026", "dateIso": "2026-06-19", "city": "KIOTO", "hotel": "Sotetsu fresa inn", "visits": ["· Tren: 15-20 min", "· Arashiyama/bosque bambú, puente Togetsukyo, leyenda", "· Tren:", "· Tarde libre Kioto"], "food": "", "dinner": "", "transport": "Sotetsu fresa inn", "zone": "Gion Kyoto", "restaurants": [["€", "Honke Owariya", "Soba histórica"], ["€€", "Gion Kappa", "Izakaya/kaiseki informal"], ["€€€", "Gion Sasaki", "Kaiseki de referencia"]]}, {"n": 9, "date": "20/06/2026", "dateIso": "2026-06-20", "city": "KIOTO", "hotel": "Sotetsu fresa inn", "visits": ["· Tren: 30-50 min", "· Nara: parque ciervos", "· Tren: 45-60 min", "· Fushimi Inari:  santuario sintoista en Fushimi-ku en base de la montaña Inari"], "food": "", "dinner": "", "transport": "Sotetsu fresa inn", "zone": "Gion Kyoto", "restaurants": [["€", "Honke Owariya", "Soba histórica"], ["€€", "Gion Kappa", "Izakaya/kaiseki informal"], ["€€€", "Gion Sasaki", "Kaiseki de referencia"]]}, {"n": 10, "date": "21/06/2026", "dateIso": "2026-06-21", "city": "KANAZAWA", "hotel": "Integrate Kanazawa ***", "visits": ["· Traslado Kioto - Kanazawa (mochila 2 días, maleta a Tokyo)", "· Distritos del periodo Edo, museos, artesania, jardin Kenroku estanques, castillo Kanazawa, tarde visita ciudad)"], "food": "", "dinner": "", "transport": "Integrate Kanazawa ***", "zone": "Gion Kyoto", "restaurants": [["€", "Honke Owariya", "Soba histórica"], ["€€", "Gion Kappa", "Izakaya/kaiseki informal"], ["€€€", "Gion Sasaki", "Kaiseki de referencia"]]}, {"n": 11, "date": "22/06/2026", "dateIso": "2026-06-22", "city": "KANAZAWA (Shirakawago)", "hotel": "Integrate Kanazawa", "visits": ["· Autobus: 1h15 min", "· Shirakawago, aldea tipica Patrimonio Unesco, casas Gassho-zukuri", "· Autobus: 1h15 min", "· Kanazawa"], "food": "", "dinner": "", "transport": "Integrate Kanazawa", "zone": "Omicho Market Kanazawa", "restaurants": [["€", "Mori Mori Sushi Omicho", "Sushi junto al mercado"], ["€€", "Fuwari", "Izakaya muy valorada"], ["€€€", "Zeniya", "Alta cocina kaiseki"]]}, {"n": 12, "date": "23/06/2026", "dateIso": "2026-06-23", "city": "TAKAYAMA", "hotel": "Tokyu stay ****", "visits": ["· traslado Kanazawa - Takayama: Autobus 1h15 min", "· Casas madera oscura, lamparas papel, rio Miyagawa, templos, cerezos primavera, nieve invierno, guia local)"], "food": "", "dinner": "", "transport": "Tokyu stay ****", "zone": "Omicho Market Kanazawa", "restaurants": [["€", "Mori Mori Sushi Omicho", "Sushi junto al mercado"], ["€€", "Fuwari", "Izakaya muy valorada"], ["€€€", "Zeniya", "Alta cocina kaiseki"]]}, {"n": 13, "date": "24/06/2026", "dateIso": "2026-06-24", "city": "HAKONE", "hotel": "Yutowa onsen **** balneario / media pension", "visits": ["· Traslado Takayama - Hakone", "· Teleferico de estacion Togendai orilla lago a Owakudani, zona volcanica, vistas desde la cima, paseo barco pirata lago Ashi 30 min (2€)", "· noche en Onsen con habitacion tradiconal japonesa"], "food": "", "dinner": "cena en hotel, media pensión", "transport": "Yutowa onsen **** balneario / media pension", "zone": "Sanmachi Suji Takayama", "restaurants": [["€", "Heianraku", "Casero, familiar y muy valorado"], ["€€", "Kyoya", "Hida beef y cocina local"], ["€€€", "Ajikura Tengoku", "Hida beef premium"]]}, {"n": 14, "date": "25/06/2026", "dateIso": "2026-06-25", "city": "TOKIO", "hotel": "Sotetsu fresa inn Ginza *** (hay 2)", "visits": ["· Traslado Hakone - Tokio", "· Visita nocturna"], "food": "", "dinner": "", "transport": "Sotetsu fresa inn Ginza *** (hay 2)", "zone": "Hakone Open-Air Museum", "restaurants": [["€", "Tamura Ginkatsu-tei", "Tofu katsu"], ["€€", "Hatsuhana Soba", "Soba artesanal"], ["€€€", "Cena en ryokan", "Kaiseki del alojamiento"]]}, {"n": 15, "date": "26/06/2026", "dateIso": "2026-06-26", "city": "TOKIO (Kamakura)", "hotel": "Sotetsu fresa inn Ginza", "visits": ["· Templo Asakusa, Puerta Raum cakke cinercuak Nakamise, bocadillos tipicos, comprar artesania, calle comercial Ame yoko Ueno, comida ropa, recuerdos, Zona Shinjuku concurrida y moderna, Gato 3D, icono Godzilla edificio Toho, calle moderna Memory Rode, famosa interseccion Shibuya,"], "food": "", "dinner": "", "transport": "Sotetsu fresa inn Ginza", "zone": "Shibuya Tokyo", "restaurants": [["€", "Uobei Shibuya", "Sushi económico y divertido"], ["€€", "Gyukatsu Motomura", "Gyukatsu muy popular"], ["€€€", "Ginza Kyubey", "Sushi clásico de alta gama"]]}, {"n": 16, "date": "27/06/2026", "dateIso": "2026-06-27", "city": "TOKIO", "hotel": "Sotetsu fresa inn Ginza", "visits": ["· trasporte publico ¿TREN?: 1h", "· Kamakura:  templo budista Hase-dera, 50.000 esculturas, cuevas, salones budistas, terraza panoramica sobre bahia, templo kotoku-in, Gran buda Kamakura 13m y 93T bronce, tren Enoden, centro de kamakura, 1:3h tiempo libre comer en calle komachi-dori tiendas y restaurantes, templo sintoista Tsurugaoka Hachiman-gu, jardines cerezos", "· TREN: 1h", "· Tokio: 8h despues llegada a Tokio y DESPEDIDA"], "food": "", "dinner": "", "transport": "Sotetsu fresa inn Ginza", "zone": "Shibuya Tokyo", "restaurants": [["€", "Uobei Shibuya", "Sushi económico y divertido"], ["€€", "Gyukatsu Motomura", "Gyukatsu muy popular"], ["€€€", "Ginza Kyubey", "Sushi clásico de alta gama"]]}, {"n": 17, "date": "28/06/2026", "dateIso": "2026-06-28", "city": "TOKIO", "hotel": "Sotetsu fresa inn Ginza", "visits": ["· Libre: compras, paseo por isla Odaiba, puente Rainbow, Mercado pesacdo Toyosu, museo arte inmersivo TeamLab Planets)"], "food": "", "dinner": "", "transport": "Sotetsu fresa inn Ginza", "zone": "Shibuya Tokyo", "restaurants": [["€", "Uobei Shibuya", "Sushi económico y divertido"], ["€€", "Gyukatsu Motomura", "Gyukatsu muy popular"], ["€€€", "Ginza Kyubey", "Sushi clásico de alta gama"]]}, {"n": 18, "date": "29/06/2026", "dateIso": "2026-06-29", "city": "VIAJE", "hotel": "VIAJE", "visits": ["· 19:15-22:15 + 3:45h + 2:00-8:00", "[Etihad 18:00-00:20 + 2h + 02:25-8:10]"], "food": "", "dinner": "", "transport": "VIAJE", "zone": "VIAJE", "restaurants": [["€", "Uobei Shibuya", "Sushi económico y divertido"], ["€€", "Gyukatsu Motomura", "Gyukatsu muy popular"], ["€€€", "Ginza Kyubey", "Sushi clásico de alta gama"]]}];
-let current = 0;
-
-function enc(s) { return encodeURIComponent(s || "Japan"); }
-function mapsSearch(q) { return "https://www.google.com/maps/search/?api=1&query=" + enc(q); }
-function mapsDir(q) { return "https://www.google.com/maps/dir/?api=1&destination=" + enc(q) + "&travelmode=transit"; }
-function escapeHtml(s) {
-  return String(s || "").replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
+const DAYS=[{"n": 1, "date": "12/06/2026", "dateIso": "2026-06-12", "aloj": "VIAJE", "hotelRaw": "VIAJE", "hotel": {"name": "Día de viaje", "address": "", "phone": "", "note": "Sin hotel."}, "zoneLabel": "Vuelo Madrid - Japón", "zoneQuery": "Aeropuerto Madrid Barajas", "visits": ["10:00 (3 h antes salida vuelo aprox)", "12:55 - 6:00 PEKIN + 2:45h + · 8:45 - 12:40", "[Etihad 10:45-19:40 + 1h30 + 21:10-11:50]"], "comer": "", "cenar": "", "restaurants": [["€", "12-25€", "Ginza Kagari", "Ramen tori paitan", "Ginza Tokyo", "Tel. en Maps"], ["€€", "25-60€", "Tsujihan Ark Hills/Ginza area", "Kaisen-don", "Tokyo Ginza", "Tel. en Maps"], ["€€€", "120-250€+", "Ginza Kyubey", "Sushi clásico", "Ginza Tokyo", "Tel. en Maps"]], "transport": ["Madrid -> Pekín -> Japón: revisar terminales y horas del billete Etihad."]}, {"n": 2, "date": "13/06/2026", "dateIso": "2026-06-13", "aloj": "OSAKA (noche Extra)", "hotelRaw": "Le Rise Osaka ***", "hotel": {"name": "THE RISE HOTEL OSAKA KITASHINCHI", "address": "1 Chome-1-13 Dojima, Kita Ward, Osaka, 530-0003, Japan", "phone": "+81-6-6458-5400", "note": "El Excel pone 'Le Rise Osaka'; he usado The Rise Osaka Kitashinchi."}, "zoneLabel": "Kobe Harborland / Sannomiya", "zoneQuery": "Kobe Harborland Mosaic", "visits": ["12:40 Traslado Aeropuerto - hotel", "Dejar maletas en hotel", "Comer", "Descansar", "17:45h TREN bala: 15 min.", "KOBE: puerto, carne, arco puerta chagán, coloridas calles Nanki-machi, distrito Sannomiya, tiendas y restaurantes", "18:00: Llegada a Estación JR Sannomiya. Paseo por las tiendas de los alrededores y las galerías comerciales cubiertas (Sannomiya Center Gai) a esta hora están a pleno rendimiento. Es el lugar perfecto para ver el bullicio de la ciudad)", "18:45: Caminata (10 min) hacia Nankin-machi/China Town (Fotos en Arco puerta Chagan, y picoteo rápido. Calles coloridas: A las 18:30-19:00, el barrio chino está espectacular con sus farolillos rojos encendidos. Es muy compacto y se recorre rápido. Los puestos de comida callejera suelen empezar a cerrar hacia las 20:00-20:30, así que es mejor ir aquí antes que al puerto)", "19:45: Caminata (10-15 min) hacia el Puerto Meriken Park, Vistas nocturnas: Es la joya de Kobe de noche. Verás la Kobe Port Tower iluminada y el edificio del Museo Marítimo", "20:15: Cena en la zona de Harborland / MOSAIC con vistas al puerto iluminado. MOSAIC: Es un centro comercial en el puerto lleno de tiendas y restaurantes con vistas al agua. Muchos restaurantes aquí cierran más tarde (22:00 o 23:00), por lo que es el sitio perfecto para terminar el día cenando."], "comer": "", "cenar": "Cena en la zona de Harborland", "restaurants": [["€", "10-18€", "Roshoki", "Pork buns / street food", "Nankinmachi Kobe", "Ver ficha en Maps"], ["€€", "25-45€", "Steakland Kobe", "Kobe beef práctico", "1-8-2 Kitanagasadori, Chuo-ku, Kobe", "Tel. en Maps"], ["€€€", "70-140€+", "Kobe Plaisir", "Kobe beef premium", "Sannomiya Kobe", "Tel. en Maps"]], "transport": ["Kansai Airport -> hotel Osaka: tren/bus, aprox. 50-75 min.", "Hotel Osaka -> JR Osaka/Shin-Osaka -> Sannomiya: tren JR, aprox. 25-45 min.", "Sannomiya -> Nankinmachi -> Meriken Park/Harborland: caminando/metro, 10-20 min por tramo."]}, {"n": 3, "date": "14/06/2026", "dateIso": "2026-06-14", "aloj": "OSAKA", "hotelRaw": "Le Rise Osaka", "hotel": {"name": "THE RISE HOTEL OSAKA KITASHINCHI", "address": "1 Chome-1-13 Dojima, Kita Ward, Osaka, 530-0003, Japan", "phone": "+81-6-6458-5400", "note": "El Excel pone 'Le Rise Osaka'; he usado The Rise Osaka Kitashinchi."}, "zoneLabel": "Castillo de Himeji", "zoneQuery": "Himeji Castle", "visits": ["TREN bala: 30 min", "HIMEJI: galerias comerciales, castillo Himeyi (la garza blanca, 16h ultima entrada), restaurante local comida libre.", "Libre OSAKA", "Etihad llega 11:50", "VISITA NOCTURNA: tour 3 h calles iluminadas y secretos de la zona: almacenes abandonados, casas pintorescas en ruinas, bares/pubs, casas de juego clandestinas, Santuario, Barrio Rojo, la yakuza)"], "comer": "", "cenar": "", "restaurants": [["€", "10-18€", "Memme", "Udon local", "Himeji Station / Himeji", "Tel. en Maps"], ["€€", "20-40€", "Tamagoya", "Anago / comida local", "Himeji Castle area", "Tel. en Maps"], ["€€€", "50-100€+", "Kobe beef Himeji", "Carne / cena especial", "Himeji", "Tel. en Maps"]], "transport": ["Hotel Osaka -> Shin-Osaka: metro/JR, 15-25 min.", "Shin-Osaka -> Himeji: Shinkansen, 30-45 min.", "Himeji Station -> Castillo: paseo/bus, 15-25 min."]}, {"n": 4, "date": "15/06/2026", "dateIso": "2026-06-15", "aloj": "OSAKA", "hotelRaw": "Le Rise Osaka", "hotel": {"name": "THE RISE HOTEL OSAKA KITASHINCHI", "address": "1 Chome-1-13 Dojima, Kita Ward, Osaka, 530-0003, Japan", "phone": "+81-6-6458-5400", "note": "El Excel pone 'Le Rise Osaka'; he usado The Rise Osaka Kitashinchi."}, "zoneLabel": "Dotonbori / Shinsekai / Nipponbashi", "zoneQuery": "Dotonbori Osaka", "visits": ["Castillo Hideyoshi, barrio Shinsekai (puestos de comida), torre Tsutenkaku,", "comida libre brochetas kushi-katsu,", "barrio otaku Nipponbashi (manga y anime, y tecnologia), centro neuralgico Namba y dotonbori, puente Ebisu-bashi, foto)"], "comer": "comida libre brochetas kushi-katsu,", "cenar": "", "restaurants": [["€", "10-20€", "Kushikatsu Daruma Shinsekai", "Kushikatsu", "Shinsekai Osaka", "Tel. en Maps"], ["€€", "20-40€", "Ajinoya Honten", "Okonomiyaki", "1-7-16 Nanba, Chuo-ku, Osaka", "Tel. en Maps"], ["€€€", "200-400€+", "Hajime", "Alta cocina", "Osaka", "Tel. en Maps"]], "transport": ["Hotel Osaka -> Osaka Castle: metro/JR, 20-35 min.", "Castillo -> Shinsekai/Tsutenkaku: metro/JR, 20-30 min.", "Shinsekai -> Nipponbashi/Dotonbori: paseo/metro, 10-20 min."]}, {"n": 5, "date": "16/06/2026", "dateIso": "2026-06-16", "aloj": "OSAKA", "hotelRaw": "Le Rise Osaka", "hotel": {"name": "THE RISE HOTEL OSAKA KITASHINCHI", "address": "1 Chome-1-13 Dojima, Kita Ward, Osaka, 530-0003, Japan", "phone": "+81-6-6458-5400", "note": "El Excel pone 'Le Rise Osaka'; he usado The Rise Osaka Kitashinchi."}, "zoneLabel": "Hiroshima Peace Park + Miyajima", "zoneQuery": "Hiroshima Peace Memorial Park", "visits": ["tren bala", "Hiroshima: cúpula bomba, parque paz, monumento niños", "tren", "Ferry", "Miyajima/Isla dioses: Torii rojo y santuario Itsukushima, templo budista Daigan-ji, templo Daisho-in", "Tren??", "OSAKA"], "comer": "", "cenar": "", "restaurants": [["€", "10-20€", "Okonomimura", "Okonomiyaki de Hiroshima", "Hiroshima", "Tel. en Maps"], ["€€", "20-40€", "Nagataya", "Okonomiyaki cerca Peace Park", "Hiroshima Peace Memorial Park", "Tel. en Maps"], ["€€€", "60-120€+", "Kanawa", "Ostras / cocina local", "Hiroshima", "Tel. en Maps"]], "transport": ["Hotel Osaka -> Shin-Osaka: 15-25 min.", "Shin-Osaka -> Hiroshima: Shinkansen, aprox. 1h25-1h40.", "Hiroshima -> Miyajimaguchi: JR, 25-30 min; ferry a Miyajima: 10 min.", "Miyajima -> Osaka: ferry + JR + Shinkansen, planificar margen."]}, {"n": 6, "date": "17/06/2026", "dateIso": "2026-06-17", "aloj": "KOYOSAN", "hotelRaw": "Soji-in ***", "hotel": {"name": "Soji-in / Souji-in Shukubo", "address": "143 Koyasan, Koya-cho, Ito-gun, Wakayama, Japan", "phone": "+81-736-56-2111", "note": "Templo / shukubo."}, "zoneLabel": "Koyasan / Okunoin", "zoneQuery": "Okunoin Cemetery Koyasan", "visits": ["Traslado Osaka-Koyasan", "templos: cedros milenarios, Okunoin, noche en templo/shukubo cena vegetariana shojin ryori"], "comer": "", "cenar": "cena vegetariana shojin ryori en el templo", "restaurants": [["€", "10-18€", "Bon On Shya", "Café/vegetariano", "Koyasan", "Tel. en Maps"], ["€€", "20-40€", "Chuoshokudo Sanbo", "Shojin ryori", "Koyasan", "Tel. en Maps"], ["€€€", "Incluido/60€+", "Cena en Soji-in", "Shojin ryori en templo", "Soji-in Koyasan", "+81-736-56-2111"]], "transport": ["Osaka Namba -> Gokurakubashi: Nankai Koya Line, aprox. 90 min.", "Gokurakubashi -> Koyasan: cable car + bus, 15-25 min.", "Koyasan -> Soji-in/Okunoin: bus local o taxi."]}, {"n": 7, "date": "18/06/2026", "dateIso": "2026-06-18", "aloj": "KIOTO", "hotelRaw": "Sotetsu fresa inn *** (hay 3)", "hotel": {"name": "Sotetsu Fresa Inn Kyoto-Shijokarasuma (CONFIRMAR SUCURSAL)", "address": "160 Dojisyacho, Ayanokouji-dori, Shimogyo-ku, Kyoto, 600-8421 Japan", "phone": "+81-75-284-2031", "note": "El Excel no especifica cuál de las 3 sucursales de Kioto. Confirmar en la reserva."}, "zoneLabel": "Kioto: Higashiyama / Gion / templos", "zoneQuery": "Gion Kyoto", "visits": ["Traslado Koyosan - Kioto", "Visista noctura: día completo, ruta templos, templo kinkaku-ji/pabellón de oro, camino filosofía, Ginkaku \"pabellón de plata, comer libre, barrio Higashiyama, Ninenzaka, calle Nene no Michi, santuario Yasaka, barrio Gion de las geishas, si queremos calle Nahamikoji  con casas de te y restaurantes"], "comer": "", "cenar": "", "restaurants": [["€", "10-20€", "Nishiki Market", "Picoteo local", "Nishiki Market Kyoto", "Tel. en Maps"], ["€€", "25-50€", "Gion Kappa", "Izakaya/Kyoto casual", "Gion Kyoto", "Tel. en Maps"], ["€€€", "150-300€+", "Gion Sasaki", "Kaiseki", "Gion Kyoto", "Tel. en Maps"]], "transport": ["Koyasan -> Osaka Namba: cable car + Nankai, aprox. 2h.", "Osaka -> Kyoto: JR/Shinkansen, 15-45 min.", "Hotel Kyoto -> Gion/Higashiyama: metro/bus/taxi, 15-30 min."]}, {"n": 8, "date": "19/06/2026", "dateIso": "2026-06-19", "aloj": "KIOTO", "hotelRaw": "Sotetsu fresa inn", "hotel": {"name": "Sotetsu Fresa Inn Kyoto-Shijokarasuma (CONFIRMAR SUCURSAL)", "address": "160 Dojisyacho, Ayanokouji-dori, Shimogyo-ku, Kyoto, 600-8421 Japan", "phone": "+81-75-284-2031", "note": "El Excel no especifica cuál de las 3 sucursales de Kioto. Confirmar en la reserva."}, "zoneLabel": "Arashiyama", "zoneQuery": "Arashiyama Bamboo Forest Kyoto", "visits": ["Tren: 15-20 min", "Arashiyama/bosque bambú, puente Togetsukyo, leyenda", "Tren:", "Tarde libre Kioto"], "comer": "", "cenar": "", "restaurants": [["€", "12-25€", "Arashiyama Yoshimura", "Soba", "Arashiyama Kyoto", "Tel. en Maps"], ["€€", "35-70€", "Shoraian", "Tofu cuisine", "Arashiyama Kyoto", "Tel. en Maps"], ["€€€", "200€+", "Kitcho Arashiyama", "Kaiseki", "Arashiyama Kyoto", "Tel. en Maps"]], "transport": ["Hotel Kyoto -> Arashiyama: tren/metro + JR/Sagano, 20-40 min.", "Arashiyama -> centro Kioto: tren, 20-40 min."]}, {"n": 9, "date": "20/06/2026", "dateIso": "2026-06-20", "aloj": "KIOTO", "hotelRaw": "Sotetsu fresa inn", "hotel": {"name": "Sotetsu Fresa Inn Kyoto-Shijokarasuma (CONFIRMAR SUCURSAL)", "address": "160 Dojisyacho, Ayanokouji-dori, Shimogyo-ku, Kyoto, 600-8421 Japan", "phone": "+81-75-284-2031", "note": "El Excel no especifica cuál de las 3 sucursales de Kioto. Confirmar en la reserva."}, "zoneLabel": "Nara + Fushimi Inari", "zoneQuery": "Todaiji Temple Nara", "visits": ["Tren: 30-50 min", "Nara: parque ciervos", "Tren: 45-60 min", "Fushimi Inari:  santuario sintoista en Fushimi-ku en base de la montaña Inari"], "comer": "", "cenar": "", "restaurants": [["€", "5-15€", "Nakatanidou", "Mochi famoso", "Nara", "Tel. en Maps"], ["€€", "20-40€", "Maguro Koya", "Atún / japonés", "Nara", "Tel. en Maps"], ["€€€", "80-180€+", "Kikusuiro", "Kaiseki / ryotei", "Nara", "Tel. en Maps"]], "transport": ["Hotel Kyoto -> Nara: JR/ Kintetsu, 35-50 min.", "Nara Park -> Fushimi Inari: tren vía Kyoto/Inari, 45-65 min.", "Fushimi Inari -> hotel Kyoto: tren/metro, 15-30 min."]}, {"n": 10, "date": "21/06/2026", "dateIso": "2026-06-21", "aloj": "KANAZAWA", "hotelRaw": "Integrate Kanazawa ***", "hotel": {"name": "Hotel Intergate Kanazawa", "address": "2-5 Takaokacho, Kanazawa City, Ishikawa, 920-0864 Japan", "phone": "+81-76-260-7200", "note": "El Excel pone 'Integrate'; lo he interpretado como Hotel Intergate Kanazawa."}, "zoneLabel": "Kanazawa: Omicho / Kenrokuen", "zoneQuery": "Omicho Market Kanazawa", "visits": ["Traslado Kioto - Kanazawa (mochila 2 días, maleta a Tokyo)", "Distritos del periodo Edo, museos, artesania, jardin Kenroku estanques, castillo Kanazawa, tarde visita ciudad)"], "comer": "", "cenar": "", "restaurants": [["€", "12-25€", "Omicho Market seafood bowl", "Kaisen-don", "Omicho Market Kanazawa", "Tel. en Maps"], ["€€", "25-50€", "Mori Mori Sushi Omicho", "Sushi", "Omicho Market Kanazawa", "Tel. en Maps"], ["€€€", "150-250€+", "Zeniya", "Kaiseki alta cocina", "Kanazawa", "Tel. en Maps"]], "transport": ["Kyoto -> Kanazawa: Thunderbird/Shinkansen según ruta, aprox. 2h15-2h45.", "Kanazawa Station -> hotel/Omicho: bus/taxi/paseo, 10-20 min.", "Omicho -> Kenrokuen/Castillo: paseo/bus, 10-20 min."]}, {"n": 11, "date": "22/06/2026", "dateIso": "2026-06-22", "aloj": "KANAZAWA (Shirakawago)", "hotelRaw": "Integrate Kanazawa", "hotel": {"name": "Hotel Intergate Kanazawa", "address": "2-5 Takaokacho, Kanazawa City, Ishikawa, 920-0864 Japan", "phone": "+81-76-260-7200", "note": "El Excel pone 'Integrate'; lo he interpretado como Hotel Intergate Kanazawa."}, "zoneLabel": "Shirakawa-go", "zoneQuery": "Shirakawa-go", "visits": ["Autobus: 1h15 min", "Shirakawago, aldea tipica Patrimonio Unesco, casas Gassho-zukuri", "Autobus: 1h15 min", "Kanazawa"], "comer": "", "cenar": "", "restaurants": [["€", "8-18€", "Gohei mochi Shirakawa-go", "Snack local", "Shirakawa-go", "Tel. en Maps"], ["€€", "20-40€", "Irori", "Comida local", "Shirakawa-go", "Tel. en Maps"], ["€€€", "50-100€+", "Hida beef Shirakawa-go", "Hida beef", "Shirakawa-go", "Tel. en Maps"]], "transport": ["Kanazawa Station -> Shirakawa-go: bus Nohi/Hokutetsu, 75-90 min.", "Shirakawa-go -> Kanazawa: bus, 75-90 min. Reserva recomendada."]}, {"n": 12, "date": "23/06/2026", "dateIso": "2026-06-23", "aloj": "TAKAYAMA", "hotelRaw": "Tokyu stay ****", "hotel": {"name": "TOKYU STAY Hida-Takayama Musubi-no-Yu", "address": "4-301 Hanasatomachi, Takayama-shi, Gifu, 506-0026 Japan", "phone": "+81-577-36-1109", "note": "Junto a la estación de Takayama."}, "zoneLabel": "Takayama: Sanmachi Suji", "zoneQuery": "Sanmachi Suji Takayama", "visits": ["traslado Kanazawa - Takayama: Autobus 1h15 min", "Casas madera oscura, lamparas papel, rio Miyagawa, templos, cerezos primavera, nieve invierno, guia local)"], "comer": "", "cenar": "", "restaurants": [["€", "10-20€", "Menya Shirakawa", "Ramen Takayama", "Takayama", "Tel. en Maps"], ["€€", "25-50€", "Kyoya", "Hida beef / local", "Takayama", "Tel. en Maps"], ["€€€", "60-120€+", "Ajikura Tengoku", "Hida beef premium", "Takayama", "Tel. en Maps"]], "transport": ["Kanazawa -> Takayama: bus vía Shirakawa-go o tren vía Toyama, aprox. 2h15-3h.", "Takayama Station / hotel -> Sanmachi Suji: paseo 10-15 min."]}, {"n": 13, "date": "24/06/2026", "dateIso": "2026-06-24", "aloj": "HAKONE", "hotelRaw": "Yutowa onsen **** balneario / media pension", "hotel": {"name": "HAKONE YUTOWA", "address": "1300-27 Gora, Hakone-machi, Ashigarashimo-gun, Kanagawa, 250-0408 Japan", "phone": "+81-460-82-0321", "note": "Onsen / media pensión según Excel."}, "zoneLabel": "Hakone: Owakudani / Lago Ashi", "zoneQuery": "Owakudani Hakone", "visits": ["Traslado Takayama - Hakone", "Teleferico de estacion Togendai orilla lago a Owakudani, zona volcanica, vistas desde la cima, paseo barco pirata lago Ashi 30 min (2€)", "noche en Onsen con habitacion tradiconal japonesa"], "comer": "", "cenar": "cena en hotel, media pensión", "restaurants": [["€", "12-25€", "Tamura Ginkatsu-tei", "Tofu katsu", "Gora Hakone", "Tel. en Maps"], ["€€", "25-45€", "Hatsuhana Soba", "Soba artesanal", "Hakone", "Tel. en Maps"], ["€€€", "Incluido/80€+", "Cena Hakone Yutowa", "Media pensión / kaiseki", "HAKONE YUTOWA", "+81-460-82-0321"]], "transport": ["Takayama -> Nagoya: Limited Express Hida, aprox. 2h30.", "Nagoya -> Odawara: Shinkansen, aprox. 70-90 min.", "Odawara -> Gora/Hakone Yutowa: tren Hakone Tozan, 45-60 min.", "Gora -> Owakudani/Lake Ashi: cablecar/ropeway/barco, tiempos variables."]}, {"n": 14, "date": "25/06/2026", "dateIso": "2026-06-25", "aloj": "TOKIO", "hotelRaw": "Sotetsu fresa inn Ginza *** (hay 2)", "hotel": {"name": "Sotetsu Fresa Inn Ginza-Sanchome (CONFIRMAR SI ES GINZA-3 O GINZA-7)", "address": "3-8-4 Ginza, Chuo-ku, Tokyo, 104-0061 Japan", "phone": "+81-3-3538-3397", "note": "El Excel indica que hay 2 en Ginza. Si tu reserva dice Nanachome, usa el botón de búsqueda del hotel."}, "zoneLabel": "Tokio: Ginza / visita nocturna", "zoneQuery": "Ginza Tokyo", "visits": ["Traslado Hakone - Tokio", "Visita nocturna"], "comer": "", "cenar": "", "restaurants": [["€", "12-25€", "Ginza Kagari", "Ramen tori paitan", "Ginza Tokyo", "Tel. en Maps"], ["€€", "25-60€", "Tsujihan Ark Hills/Ginza area", "Kaisen-don", "Tokyo Ginza", "Tel. en Maps"], ["€€€", "120-250€+", "Ginza Kyubey", "Sushi clásico", "Ginza Tokyo", "Tel. en Maps"]], "transport": ["Hakone/Gora -> Odawara: Hakone Tozan, 45-60 min.", "Odawara -> Tokyo: Shinkansen/Odakyu, 35-90 min.", "Tokyo/Ginza -> hotel: metro/taxi, 10-25 min."]}, {"n": 15, "date": "26/06/2026", "dateIso": "2026-06-26", "aloj": "TOKIO (Kamakura)", "hotelRaw": "Sotetsu fresa inn Ginza", "hotel": {"name": "Sotetsu Fresa Inn Ginza-Sanchome (CONFIRMAR SI ES GINZA-3 O GINZA-7)", "address": "3-8-4 Ginza, Chuo-ku, Tokyo, 104-0061 Japan", "phone": "+81-3-3538-3397", "note": "El Excel no especifica Ginza-3 o Ginza-7. Confirmar en la reserva."}, "zoneLabel": "Tokio: Asakusa - Ueno - Shinjuku - Shibuya", "zoneQuery": "Senso-ji Asakusa Tokyo", "visits": ["Templo Asakusa, Puerta Raum cakke cinercuak Nakamise, bocadillos tipicos, comprar artesania, calle comercial Ame yoko Ueno, comida ropa, recuerdos, Zona Shinjuku concurrida y moderna, Gato 3D, icono Godzilla edificio Toho, calle moderna Memory Rode, famosa interseccion Shibuya,"], "comer": "", "cenar": "", "restaurants": [["€", "10-20€", "Asakusa Menchi", "Street food", "Asakusa Tokyo", "Tel. en Maps"], ["€€", "25-45€", "Gyukatsu Motomura", "Gyukatsu", "Tokyo", "Tel. en Maps"], ["€€€", "80-180€+", "Ninja Tokyo / Ginza dinner", "Cena especial familiar", "Tokyo", "Tel. en Maps"]], "transport": ["Ginza -> Asakusa: metro, 20-30 min.", "Asakusa -> Ueno/AmeYoko: metro/JR, 15-20 min.", "Ueno -> Shinjuku/Shibuya: JR/metro, 25-35 min."]}, {"n": 16, "date": "27/06/2026", "dateIso": "2026-06-27", "aloj": "TOKIO", "hotelRaw": "Sotetsu fresa inn Ginza", "hotel": {"name": "Sotetsu Fresa Inn Ginza-Sanchome (CONFIRMAR SI ES GINZA-3 O GINZA-7)", "address": "3-8-4 Ginza, Chuo-ku, Tokyo, 104-0061 Japan", "phone": "+81-3-3538-3397", "note": "El Excel no especifica Ginza-3 o Ginza-7. Confirmar en la reserva."}, "zoneLabel": "Kamakura", "zoneQuery": "Kotoku-in Kamakura", "visits": ["trasporte publico ¿TREN?: 1h", "Kamakura:  templo budista Hase-dera, 50.000 esculturas, cuevas, salones budistas, terraza panoramica sobre bahia, templo kotoku-in, Gran buda Kamakura 13m y 93T bronce, tren Enoden, centro de kamakura, 1:3h tiempo libre comer en calle komachi-dori tiendas y restaurantes, templo sintoista Tsurugaoka Hachiman-gu, jardines cerezos", "TREN: 1h", "Tokio: 8h despues llegada a Tokio y DESPEDIDA"], "comer": "", "cenar": "", "restaurants": [["€", "8-18€", "Komachi-dori street food", "Snacks y dulces", "Komachi Dori Kamakura", "Tel. en Maps"], ["€€", "20-45€", "Matsubara-an", "Soba/cocina japonesa", "Kamakura", "Tel. en Maps"], ["€€€", "60-120€+", "Kamakura Matsubara-an Keyaki", "Cocina especial", "Kamakura", "Tel. en Maps"]], "transport": ["Tokyo/Ginza -> Kamakura: JR Yokosuka Line, 55-70 min.", "Kamakura -> Hase/Kotoku-in: Enoden, 5-10 min.", "Kamakura -> Tokyo: JR, aprox. 60 min."]}, {"n": 17, "date": "28/06/2026", "dateIso": "2026-06-28", "aloj": "TOKIO", "hotelRaw": "Sotetsu fresa inn Ginza", "hotel": {"name": "Sotetsu Fresa Inn Ginza-Sanchome (CONFIRMAR SI ES GINZA-3 O GINZA-7)", "address": "3-8-4 Ginza, Chuo-ku, Tokyo, 104-0061 Japan", "phone": "+81-3-3538-3397", "note": "El Excel no especifica Ginza-3 o Ginza-7. Confirmar en la reserva."}, "zoneLabel": "Toyosu / Odaiba / TeamLab", "zoneQuery": "teamLab Planets Tokyo", "visits": ["Libre: compras, paseo por isla Odaiba, puente Rainbow, Mercado pesacdo Toyosu, museo arte inmersivo TeamLab Planets)"], "comer": "", "cenar": "", "restaurants": [["€", "12-25€", "Toyosu Market sushi", "Sushi informal", "Toyosu Tokyo", "Tel. en Maps"], ["€€", "25-50€", "Tsukiji Sushiko Toyosu", "Sushi", "Toyosu Tokyo", "Tel. en Maps"], ["€€€", "100-250€+", "GINZA ONODERA / Ginza sushi", "Sushi alta gama", "Ginza Tokyo", "Tel. en Maps"]], "transport": ["Ginza -> TeamLab Planets/Toyosu: metro/Yurikamome, 25-40 min.", "Toyosu -> Odaiba: Yurikamome, 15-25 min.", "Odaiba -> Ginza: Yurikamome + metro/JR, 30-45 min."]}, {"n": 18, "date": "29/06/2026", "dateIso": "2026-06-29", "aloj": "VIAJE", "hotelRaw": "VIAJE", "hotel": {"name": "Día de viaje", "address": "", "phone": "", "note": "Sin hotel."}, "zoneLabel": "Vuelo de regreso", "zoneQuery": "Haneda Airport or Narita Airport Tokyo", "visits": ["19:15-22:15 + 3:45h + 2:00-8:00", "[Etihad 18:00-00:20 + 2h + 02:25-8:10]"], "comer": "", "cenar": "", "restaurants": [["€", "12-25€", "Ginza Kagari", "Ramen tori paitan", "Ginza Tokyo", "Tel. en Maps"], ["€€", "25-60€", "Tsujihan Ark Hills/Ginza area", "Kaisen-don", "Tokyo Ginza", "Tel. en Maps"], ["€€€", "120-250€+", "Ginza Kyubey", "Sushi clásico", "Ginza Tokyo", "Tel. en Maps"]], "transport": ["Hotel Tokyo -> aeropuerto: confirmar aeropuerto/terminal del billete Etihad. Salir con margen amplio."]}];
+let current=0;
+function enc(s){return encodeURIComponent(s||"Japan")}
+function mapsSearch(q){return "https://www.google.com/maps/search/?api=1&query="+enc(q)}
+function mapsDir(q){return "https://www.google.com/maps/dir/?api=1&destination="+enc(q)+"&travelmode=transit"}
+function e(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+function buildIndex(){
+ document.getElementById("indexGrid").innerHTML=DAYS.map((d,i)=>`<a class="daytile" href="#" onclick="showDay(${i});return false;"><span class="date">Día ${d.n} · ${e(d.date)}</span><span class="city">📍 ${e(d.zoneLabel)}</span></a>`).join("");
 }
-
-function buildIndex() {
-  const grid = document.getElementById("indexGrid");
-  grid.innerHTML = DAYS.map((d,i)=>`
-    <a class="daytile" href="#" onclick="showDay(${i});return false;">
-      <span class="date">Día ${d.n} · ${escapeHtml(d.date)}</span>
-      <span class="city">📍 ${escapeHtml(d.city || d.zone)}</span>
-    </a>`).join("");
+function restHtml(d){
+ return (d.restaurants||[]).map(r=>`<div class="restaurant">
+ <div class="price">${e(r[0])} · ${e(r[1])} por persona aprox.</div>
+ <div class="restname">${e(r[2])}</div>
+ <div class="small">${e(r[3])}</div>
+ <div class="small">📍 ${e(r[4])}</div>
+ <div class="small">☎️ ${e(r[5])}</div>
+ <div style="margin-top:8px"><a class="action" href="${mapsSearch(r[2]+" "+r[4])}" target="_blank">Abrir restaurante</a></div>
+ </div>`).join("");
 }
-
-function dayHtml(d) {
-  const visits = d.visits && d.visits.length ? d.visits.map(v=>`<li>${escapeHtml(v)}</li>`).join("") : `<p class="empty">Sin visitas detalladas en el Excel.</p>`;
-  const rests = (d.restaurants || []).map(r=>`
-    <div class="restaurant">
-      <div class="price">${escapeHtml(r[0])}</div>
-      <div>
-        <div class="restname">${escapeHtml(r[1])}</div>
-        <div class="small">${escapeHtml(r[2])}</div>
-        <div style="margin-top:7px"><a class="action" href="${mapsSearch(r[1] + " " + (d.city || d.zone))}" target="_blank">Abrir restaurante</a></div>
-      </div>
-    </div>`).join("");
-  return `
-    <div class="card dayhead">
-      <div class="kicker">Día ${d.n} · ${escapeHtml(d.date)}</div>
-      <h2>${escapeHtml(d.city || "Japón")}</h2>
-      <div class="actions">
-        <a class="action primary" href="${mapsSearch(d.zone)}" target="_blank">📍 Zona del día</a>
-        <a class="action primary" href="${mapsDir(d.zone)}" target="_blank">🚆 Llévame allí</a>
-        <a class="action" href="${mapsSearch("restaurantes cerca de mí")}" target="_blank">🍜 Cerca de mí</a>
-        <a class="action" href="${mapsSearch("baños cerca de mí")}" target="_blank">🚻 Baños cerca</a>
-      </div>
-    </div>
-    <div class="card">
-      <h3>🏨 Hotel</h3>
-      <p>${escapeHtml(d.hotel || "No indicado")}</p>
-      ${d.hotel ? `<a class="action" href="${mapsSearch(d.hotel + " " + (d.city || "Japan"))}" target="_blank">Abrir hotel en Maps</a>` : ""}
-    </div>
-    <div class="card">
-      <h3>🗺️ Qué ver</h3>
-      <ul>${visits}</ul>
-    </div>
-    <div class="card">
-      <h3>🍽️ Comida / cena prevista</h3>
-      <p><b>Comida:</b> ${escapeHtml(d.food || "Libre / elegir sobre la marcha")}</p>
-      <p><b>Cena:</b> ${escapeHtml(d.dinner || "Libre / elegir sobre la marcha")}</p>
-    </div>
-    <div class="card">
-      <h3>🍣 Restaurantes seleccionados</h3>
-      ${rests}
-    </div>
-    <div class="card">
-      <h3>🚆 Transporte</h3>
-      <p>${escapeHtml(d.transport || "Revisar trayecto del día en Maps / Google Maps.")}</p>
-    </div>
-  `;
+function dayHtml(d){
+ const v=(d.visits&&d.visits.length)?d.visits.map(x=>`<li>${e(x)}</li>`).join(""):`<p class="empty">Sin visitas detalladas en el Excel.</p>`;
+ const t=(d.transport&&d.transport.length)?d.transport.map(x=>`<li>${e(x)}</li>`).join(""):`<p class="empty">Sin transporte detallado.</p>`;
+ const hotelQuery=(d.hotel.name||d.hotelRaw)+" "+(d.hotel.address||d.aloj||"Japan");
+ return `<div class="card dayhead"><div class="kicker">Día ${d.n} · ${e(d.date)}</div><h2>${e(d.zoneLabel)}</h2>
+ <div class="actions">
+ <a class="action primary" href="${mapsSearch(d.zoneQuery)}" target="_blank">📍 Zona del día</a>
+ <a class="action primary" href="${mapsDir(d.zoneQuery)}" target="_blank">🚆 Llévame allí</a>
+ <a class="action" href="${mapsSearch("best restaurants near "+d.zoneQuery)}" target="_blank">🍣 Comer aquí</a>
+ <a class="action" href="${mapsSearch("things to do or cafes near "+d.zoneQuery)}" target="_blank">☔ Plan B</a>
+ <a class="action" href="${mapsSearch("electronics stores near "+d.zoneQuery)}" target="_blank">💻 Tecnología</a>
+ <a class="action" href="${mapsSearch("fashion stores near "+d.zoneQuery)}" target="_blank">👕 Ropa</a>
+ <a class="action" href="${mapsSearch("public toilets near "+d.zoneQuery)}" target="_blank">🚻 Baños zona</a>
+ </div></div>
+ <div class="card"><h3>🏨 Hotel</h3><p><b>${e(d.hotel.name||d.hotelRaw)}</b></p><p>📍 ${e(d.hotel.address||"Confirmar en la reserva")}</p><p>☎️ ${e(d.hotel.phone||"Confirmar")}</p>${d.hotel.note?`<p class="warn">${e(d.hotel.note)}</p>`:""}
+ <div class="hotelgrid"><a class="action primary" href="${mapsSearch(hotelQuery)}" target="_blank">Abrir hotel en Maps</a><a class="action primary" href="${mapsDir(hotelQuery)}" target="_blank">Ir al hotel</a></div></div>
+ <div class="card"><h3>🗺️ Qué ver</h3><ul>${v}</ul></div>
+ <div class="card"><h3>🍽️ Comida / cena prevista</h3><p><b>Comida:</b> ${e(d.comer||"Libre / elegir con Comer aquí")}</p><p><b>Cena:</b> ${e(d.cenar||"Libre / elegir con restaurantes seleccionados")}</p></div>
+ <div class="card"><h3>🍣 Restaurantes seleccionados</h3>${restHtml(d)}</div>
+ <div class="card"><h3>🚆 Transporte recomendado</h3><ul>${t}</ul></div>`;
 }
-
-function showIndex() {
-  document.getElementById("index").classList.add("active");
-  document.getElementById("day").classList.remove("active");
-  document.getElementById("topTitle").textContent = "Índice";
-}
-
-function showDay(i) {
-  current = Math.max(0, Math.min(DAYS.length-1, i));
-  const d = DAYS[current];
-  document.getElementById("dayContent").innerHTML = dayHtml(d);
-  document.getElementById("index").classList.remove("active");
-  document.getElementById("day").classList.add("active");
-  document.getElementById("topTitle").textContent = `Día ${d.n} · ${d.city || "Japón"}`;
-  document.getElementById("dayContent").scrollTop = 0;
-  history.replaceState(null, "", "#dia-" + d.n);
-}
-function nextDay() { showDay(current + 1); }
-function prevDay() { showDay(current - 1); }
-
-function initialPage() {
-  buildIndex();
-  const hash = location.hash.match(/dia-(\d+)/);
-  if (hash) return showDay(Number(hash[1])-1);
-
-  const today = new Date();
-  const local = today.getFullYear() + "-" + String(today.getMonth()+1).padStart(2,"0") + "-" + String(today.getDate()).padStart(2,"0");
-  const idx = DAYS.findIndex(d => d.dateIso === local);
-  if (idx >= 0) showDay(idx);
-  else showIndex();
+function showIndex(){document.getElementById("index").classList.add("active");document.getElementById("day").classList.remove("active");document.getElementById("topTitle").textContent="Índice";history.replaceState(null,"","#indice")}
+function showDay(i){current=Math.max(0,Math.min(DAYS.length-1,i));const d=DAYS[current];document.getElementById("dayContent").innerHTML=dayHtml(d);document.getElementById("index").classList.remove("active");document.getElementById("day").classList.add("active");document.getElementById("topTitle").textContent=`Día ${d.n} · ${d.zoneLabel}`;document.getElementById("dayContent").scrollTop=0;history.replaceState(null,"","#dia-"+d.n)}
+function nextDay(){showDay(current+1)} function prevDay(){showDay(current-1)}
+function initialPage(){
+ buildIndex();
+ const h=location.hash.match(/dia-(\d+)/); if(h) return showDay(Number(h[1])-1);
+ const today=new Date(); const local=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0");
+ const first=DAYS[0].dateIso, last=DAYS[DAYS.length-1].dateIso;
+ let idx=DAYS.findIndex(d=>d.dateIso===local);
+ if(idx>=0) showDay(idx); else showIndex();
 }
 initialPage();
-</script>
-</body>
-</html>
+</script></body></html>
