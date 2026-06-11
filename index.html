@@ -6,7 +6,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Japón 2026">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Japón 2026</title>
+<title>Japón 2026 · v6 limpia</title>
+<!-- Versión v6 limpia: sin #indice ni #dia en la URL -->
 <style>
 :root{--bg:#07111f;--card:#111827;--card2:#1f2937;--text:#f8fafc;--muted:#cbd5e1;--accent:#ef4444;--accent2:#f97316;--line:rgba(255,255,255,.13)}
 *{box-sizing:border-box}
@@ -103,12 +104,11 @@ function dayHtml(d){
  <div class="card"><h3>🍣 Restaurantes seleccionados</h3>${restHtml(d)}</div>
  <div class="card"><h3>🚆 Transporte recomendado</h3><ul>${t}</ul></div>`;
 }
-function showIndex(){document.getElementById("index").classList.add("active");document.getElementById("day").classList.remove("active");document.getElementById("topTitle").textContent="Índice";history.replaceState(null,"","#indice")}
-function showDay(i){current=Math.max(0,Math.min(DAYS.length-1,i));const d=DAYS[current];document.getElementById("dayContent").innerHTML=dayHtml(d);document.getElementById("index").classList.remove("active");document.getElementById("day").classList.add("active");document.getElementById("topTitle").textContent=`Día ${d.n} · ${d.zoneLabel}`;document.getElementById("dayContent").scrollTop=0;history.replaceState(null,"","#dia-"+d.n)}
+function showIndex(){document.getElementById("index").classList.add("active");document.getElementById("day").classList.remove("active");document.getElementById("topTitle").textContent="Índice";}
+function showDay(i){current=Math.max(0,Math.min(DAYS.length-1,i));const d=DAYS[current];document.getElementById("dayContent").innerHTML=dayHtml(d);document.getElementById("index").classList.remove("active");document.getElementById("day").classList.add("active");document.getElementById("topTitle").textContent=`Día ${d.n} · ${d.zoneLabel}`;document.getElementById("dayContent").scrollTop=0;}
 function nextDay(){showDay(current+1)} function prevDay(){showDay(current-1)}
 function initialPage(){
  buildIndex();
- const h=location.hash.match(/dia-(\d+)/); if(h) return showDay(Number(h[1])-1);
  const today=new Date(); const local=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0");
  const first=DAYS[0].dateIso, last=DAYS[DAYS.length-1].dateIso;
  let idx=DAYS.findIndex(d=>d.dateIso===local);
